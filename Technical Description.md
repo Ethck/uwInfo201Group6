@@ -13,6 +13,8 @@ The dataset is already in a fairly usable form that will not require much, if an
 
 
 `Year and Quarter, Time Period, Indicator, Rate Type, Rate, Unit, Significant`
+
+
 `2017 Q1, 12 months ending with quarter, All Causes, Age-adjusted, 731.5, "Deaths per 100,000", False`
 
 
