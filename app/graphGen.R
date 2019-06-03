@@ -8,8 +8,6 @@ q2 <- data %>% filter(grepl("Q2", Year.and.Quarter))
 q3 <- data %>% filter(grepl("Q3", Year.and.Quarter))
 q4 <- data %>% filter(grepl("Q4", Year.and.Quarter))
 
-print(head(q1))
-
 genQuarterBar <- function(quarterList) {
 	counts <- NULL
 	plotLabels <- NULL
@@ -36,9 +34,39 @@ genQuarterBar <- function(quarterList) {
 	}
 	colnames(counts) <- c("Quarter", "Mean")
 	counts <- as.data.frame(counts)
-	print(counts)
 	a <- ggplot(data = counts, aes(x = Quarter, y = Mean)) + geom_bar(stat = "identity", fill = plotColors, mapping = aes(x = plotLabels))
-	print(a)
+	return(a)
 }
 
-genQuarterBar(c("1","4"))
+genLine <- function(deathList) {
+	plotLabels <- NULL
+	plotColors <- c("red", "blue", "green", "purple", "orange",
+					"chartreuse", "chocolate4", "cornflowerblue", "aquamarine", "blueviolet",
+					"coral2", "darkblue", "darkgoldenrod1", "brown4", "firebrick4",
+					"deeppink2", "gray3", "hotpink2", "khaki", "mediumorchid1",
+					"mediumvioletred", "mediumseagreen")
+	tData <- NULL
+	count <- 1
+	for (i in unique(data$Indicator)) {
+		if (i %in% deathList) {
+			d <- data %>% filter(grepl(i, Indicator)) %>% filter(Rate.Type == "Age-adjusted") %>% filter(Time.Period == "3-month period")
+			tData <- rbind(tData, d)
+			plotLabels <- append(plotLabels, i)
+			print(paste0("Added ", i, " to the list."))
+		}
+
+		count <- count + 1
+	}
+
+	plotColors <- plotColors[1:length(plotLabels)]
+	plotColors <- sort(rep(plotColors, times = 8))
+
+	a <- ggplot(data = tData, aes(x = Year.and.Quarter, y = Rate, group = Indicator)) +
+	geom_line(color = plotColors) +
+	geom_point()
+
+	return(a)
+
+}
+#genQuarterBar(c("1","4"))
+#genLine(c("All Causes", "Alzheimer's disease"))
