@@ -4,7 +4,7 @@ server <- function(input, output) {
 	output$plot <- renderPlot({
 	  quarterList <- input$checkQuarters
 	  if(input$plotChoice == "1") {
-	    print(plot1(quarterList))
+	    print(genQuarterBar(quarterList))
 	  } else {
 	    print(plot2(quarterList))
 	  }
