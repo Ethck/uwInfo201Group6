@@ -56,8 +56,10 @@ shinyUI(fluidPage(theme = "style.css",
     tabPanel("About",
       sidebarLayout(
         mainPanel(
+          column(12,
           img(src = 'med1.jpg', width = "500px", height = "500px"),
           img(src = 'med2.jpg', width = "500px", height = "500px")
+          )
         ),
         div(class = "summ",
         sidebarPanel(
@@ -82,11 +84,12 @@ shinyUI(fluidPage(theme = "style.css",
         div(class = "summ",
         mainPanel(
           fluidRow(
-          p("Data source : ", a("https://www.cdc.gov/nchs/nvss/vsrr/mortality.htm"), href = "https://www.cdc.gov/nchs/nvss/vsrr/mortality.htm"),
-          p("Photo 1 : ", a('https://www.shutterstock.com/image-vector/medical-flat-vector-backgroundhealth-carefirst-aidinternational-211435294'), 
-            href = 'https://www.shutterstock.com/image-vector/medical-flat-vector-backgroundhealth-carefirst-aidinternational-211435294'),
-          p("Photo 2: ", a('https://st.depositphotos.com/1001941/1231/v/950/depositphotos_12311431-stock-illustration-abstract-medical-background-eps-10.jpg'),
-            href = 'https://st.depositphotos.com/1001941/1231/v/950/depositphotos_12311431-stock-illustration-abstract-medical-background-eps-10.jpg')
+            p("Data source : ", a("https://www.cdc.gov/nchs/nvss/vsrr/mortality.htm"), href = "https://www.cdc.gov/nchs/nvss/vsrr/mortality.htm"),
+            p("Photo 1 : ", a('https://www.shutterstock.com/image-vector/medical-flat-vector-backgroundhealth-carefirst-aidinternational-211435294'), 
+              href = 'https://www.shutterstock.com/image-vector/medical-flat-vector-backgroundhealth-carefirst-aidinternational-211435294'),
+            p("Photo 2 : ", a('https://st.depositphotos.com/1001941/1231/v/950/depositphotos_12311431-stock-illustration-abstract-medical-background-eps-10.jpg'),
+              href = 'https://st.depositphotos.com/1001941/1231/v/950/depositphotos_12311431-stock-illustration-abstract-medical-background-eps-10.jpg'),
+            p("Link to Shiny App : ", a('https://sagnikshaggy.shinyapps.io/MortalityData/'), href = 'https://sagnikshaggy.shinyapps.io/MortalityData/')
           )
         )
         )
