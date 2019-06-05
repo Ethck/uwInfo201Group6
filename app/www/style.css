@@ -1,23 +1,23 @@
 body {
   background-color: #7b808c;
-  color: #acb1bf;
+  color: black;
   font-family: "Times New Roman", Times, serif;
 }
 .nav{
   background-color: #acb1bf;
-  color : #acb1bf;
+  color : black;
   font-size: 130%;
     font-family: "Times New Roman", Times, serif;
 }
 .side{
   background-color: #d7d9e0;
-  color : #b4b6bf;
+  color : black;
   font-size: 110%;
     font-family: "Times New Roman", Times, serif;
 }
 .main{
   background-color: #6cb6f5;
-  color : #5aa2e0;
+  color : black;
   font-size: 110%;
     font-family: "Times New Roman", Times, serif;
 }

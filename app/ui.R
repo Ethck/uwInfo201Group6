@@ -8,18 +8,28 @@ shinyUI(fluidPage(theme = "style.css",
       div(class = "side",
       sidebarLayout(
         div(class = "main",
-        mainPanel(
-          plotOutput("quartersPlot", height = "80vh")
-        )
-        ),
+            mainPanel(
+              plotOutput("quartersPlot", height = "80vh")
+        )),
         
         sidebarPanel(
-          div(class = "bar",
+          div(class = "pan",
           fluidRow(
             column(12,
                    checkboxGroupInput("checkQuarters", "Quarters to view", choiceNames = c("1", "2", "3", "4"),
-                                    choiceValues = c("1", "2", "3", "4"), selected = c("1", "2", "3", "4"))
-            )          
+                                    choiceValues = c("1", "2", "3", "4"), selected = c("1", "2", "3", "4")),
+                   br(),
+                   p("Some notable insights:"),
+                   p("- There appears to be an uptick in deaths during Winter (Quarter 4, Quarter 1"),
+                   p("We speculate that this uptick may have its roots in the fact that during the
+                     winter the weather goes sour in America, which is where our data is gathered.
+                     This dip in quality of weather can have a multitude of implications. For example,
+                     with the increase in snow, ice may cause more slips and falls. Furthermore,
+                     research has shown that when weather is cloudy there is a higher chance in depression
+                     and other mental conditions. Physical activity can take a dip as well, which can
+                     cause a multitude of cardiovascular issues.")
+               )
+            
           )
           )
         )
@@ -27,15 +37,24 @@ shinyUI(fluidPage(theme = "style.css",
       )
     ),
     tabPanel("Compare",
-      div(class = "side",
+      div(class = "pan",
       sidebarLayout(
-        div(class = "main",
+        div(class = "pan",
         mainPanel(
-          plotOutput("linePlot", height = "80vh")
+          plotOutput("linePlot", height = "80vh"),
+          br(),
+          p("Some notable insights:"),
+          p("- Here we can see a much clearer uptick especially in quarter 4 and 1 during both cycles."),
+          p("An interesting statistic that caught our eye is that falls for people above the age of 65,
+            is astonishingly high. Things like unintentional injuries, HIV disease, or Heart disease 
+            is has a relatively constant rate throughout the year. But we see an exceptionally strong spike
+            in Falls, Influenza, and Pneumonitis during quarter 1, indicating a high rate of death in the 
+            January - March months. We theorize that due to the poor weather disease and accidental slips
+            and falls are much more likely to occur during these months.")
         )
         ),
         sidebarPanel(
-          div(class = "bar",
+          div(class = "pan",
           fluidRow(
             column(12,
                    checkboxGroupInput("checkIndicators", "Indicators to view",
@@ -104,4 +123,3 @@ shinyUI(fluidPage(theme = "style.css",
   )
 )
 )
-
