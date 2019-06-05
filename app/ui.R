@@ -73,7 +73,11 @@ shinyUI(fluidPage(theme = "style.css",
                human immunodeficiency virus (HIV) disease, homicide, and firearms-related deaths'),
             p('We homed our focus towards medical research centers because right now they are very reactive to the issues
                they face, and this way they can be pro-active in facing them. This means they will be able to look at old data and
-               predict on what to invest their time and money into.')
+               predict on what to invest their time and money into.'),
+            p('Our first graph under the Averages tab displays the quarterly mean values for all of the different mortality causes
+               and the user can choose which quarters to view and compare.'),
+            p('Our second graph under the compare tab allows you to view various death rates for different indicators, and all quarters
+               and compare them all in one graph.')
           )
         )
         )
