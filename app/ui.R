@@ -5,7 +5,7 @@ shinyUI(fluidPage(theme = "style.css",
   
   div(class = "nav", 
   navbarPage("Mortality", 
-    tabPanel("Analysis",
+    tabPanel("Averages",
       div(class = "side",
       sidebarLayout(
         div(class = "main",
@@ -27,7 +27,7 @@ shinyUI(fluidPage(theme = "style.css",
       )
       )
     ),
-    tabPanel("Analysis Pt.2",
+    tabPanel("Compare",
       div(class = "side",
       sidebarLayout(
         div(class = "main",
